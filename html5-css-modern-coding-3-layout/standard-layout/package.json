@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "parcel": "^1.12.3",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.5"
+  }
+}

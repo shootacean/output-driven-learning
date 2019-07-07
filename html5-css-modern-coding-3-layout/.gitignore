@@ -5,4 +5,8 @@
 .idea/
 
 # Modules
-node_modules/
+**/node_modules/
+
+# Bundle
+**/dist/
+**/.cache/
