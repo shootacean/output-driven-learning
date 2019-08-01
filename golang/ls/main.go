@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"path/filepath"
+	"strings"
 )
 
 func main() {
 	args := readArgs()
-	fmt.Println(ls(args[0]))
+	result := ls(args[0])
+	fmt.Println(result)
 }
 
 // コマンドライン引数を取得する
@@ -19,9 +21,9 @@ func readArgs() []string {
 }
 
 // lsコマンドの再発明
-func ls(dir string) []string {
+func ls(dir string) string {
 	fileNames := getFileNames(dir)
-	return fileNames
+	return strings.Join(fileNames, " ")
 }
 
 // 指定ディレクトリ配下のファイル名を取得する
