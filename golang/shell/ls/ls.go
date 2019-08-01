@@ -1,29 +1,15 @@
-package main
+package ls
 
 import (
-	"flag"
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
 	"strings"
 )
 
-func main() {
-	args := readArgs()
-	result := ls(args[0])
-	fmt.Println(result)
-}
-
-// コマンドライン引数を取得する
-func readArgs() []string {
-	flag.Parse()
-	return flag.Args()
-}
-
 // lsコマンドの再発明
-func ls(dir string) string {
+func Exec(dir string) string {
 	fileNames := getFileNames(dir)
-	return strings.Join(fileNames, " ")
+	return strings.Join(fileNames, "\t")
 }
 
 // 指定ディレクトリ配下のファイル名を取得する
